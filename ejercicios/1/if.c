@@ -5,8 +5,27 @@
 
 /* Bibliotecas a incluir */
 
-void main () {
+#include <stdio.h>
+
+int main(int argc, char* argv[]) {
+
 	/* Declaración de variables */
 
+	int valor;
+
+	if (argc != 2)
+	{
+		fprintf(stderr, "ERROR:\n%s <numero>\n", argv[0]);
+		return -1;
+	} else
+		valor = atoi(argv[1]);
+
 	/* Código usando condicional if */
+
+	if (valor >= 5)
+		printf("Este valor es mayor o igual que 5: %d\n",valor);
+	else
+		printf("Este valor no es mayor que 5: %d\n",valor);
+
+	return 0;
 }
