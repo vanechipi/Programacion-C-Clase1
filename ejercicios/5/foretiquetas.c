@@ -8,11 +8,28 @@
 
 /* Bibliotecas a incluir */
 
+#include <stdio.h>
+
 int main()
 {
 	/* Declaración de variables */
+	char cadena[30]= "Esto es una cadenas\n";
+	int i;
 
 	/* Código usando condicional for */
+	for (i=0; cadena[i] != '\0'; i++)
+	{
+		if (cadena[i] != 'a')
+			continue;
+			if (cadena[i+1] == 's')
+				goto es_s;
+
+	}
+	printf("No tenemos una 'a' seguida de una 's'\n");
+	return 0;
 
 	/* Declaracion de etiquetas */
+	  es_s:
+                printf("Tenemos una 'a' seguida de una 's'\n");
+		return 1;
 }
