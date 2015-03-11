@@ -5,9 +5,18 @@
 
 /* Bibliotecas a incluir */
 
+#include <stdio.h>
+
 void main()
 {
 	/* Declaración de variables */
+	int len=0;
+	char cadena[7] = "cadena";
 
 	/* Código usando while*/
+	while (cadena[len] != '\0')
+	{
+		len++;
+	}
+	printf("Encontrado el \\0 de la cadena y el tamaño es: %d\n",len);
 }
