@@ -12,10 +12,38 @@
 
 /* Zona para incluir las bibliotecas o las cabeceras */
 
+#include <stdio.h>
+#include "utils.h"
+
 /* Zona para declarar la funcion estática */
 
-/* Programa Principal */
-void main ()
-{
+static int multiplicar_numero_secreto(int n);
+int numSecreto = 4;
 
+/* Programa Principal */
+
+int main (int argc, char* argv[])
+{
+        /* Declaración de variables */
+        int valor;
+	int resultado;
+
+        if (argc != 2)
+	{
+                fprintf(stderr, "ERROR:\n%s <numero>\n", argv[0]);
+                return -1;
+        } else
+                valor = atoi(argv[1]);
+		if (es_par(valor))
+		{
+			resultado = multiplicar_numero_secreto(valor);
+			printf("El valor de multiplicarlo por el numero secreto"
+			" %d es: %d\n", numSecreto, resultado);
+		}
+	return -1;
 }
+static int multiplicar_numero_secreto(int n)
+{
+	return n * numSecreto;
+}
+
